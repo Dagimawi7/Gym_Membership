@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    // makes TypeScript turn into normal JavaScript
+    "target": "es2016",
+
+    // lets Node.js understand imports and exports
+    "module": "commonjs",
+
+    // this is where the final JavaScript files go
+    "outDir": "./dist",
+
+    // this is where I write my TypeScript code
+    "rootDir": "./src",
+
+    // helps catch errors while coding
+    "strict": true,
+
+    // makes importing libraries easier
+    "esModuleInterop": true
+  }
+}
