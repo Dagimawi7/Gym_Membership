@@ -8,7 +8,7 @@ dotenv.config();
 // setting up the server(server online)
 const app = express();
 // port number(door number of the server to be reached)
-const port = 5000;
+const port = 5001;
 
 // gives premission other apps to talk to us(frontend to backend)
 app.use(cors()); 
