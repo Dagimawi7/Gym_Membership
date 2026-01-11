@@ -1,6 +1,7 @@
 import express from "express"; // helps build the server
 import dotenv from "dotenv"; // let us use secret values like passowrd
 import cors from "cors"; // makes frontend and backend communicate
+import { query } from "./db";
 
 // Loads the secret values(passwords) from .env file
 dotenv.config();
@@ -23,4 +24,9 @@ app.get('/', (req,res) => {
 // starts the server and shows a message it is running
 app.listen(port, () => {
     console.log(`server running on http://localhost:${port}`);
+});
+
+// test connection to the database
+query('SELECT NOW()').then((res) => {
+    console.log('Database Connected Successfully:', res.rows[0]);
 });
