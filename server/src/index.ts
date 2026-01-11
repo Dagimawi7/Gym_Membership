@@ -1,3 +1,4 @@
+// server file 
 import express from "express"; // helps build the server
 import dotenv from "dotenv"; // let us use secret values like passowrd
 import cors from "cors"; // makes frontend and backend communicate

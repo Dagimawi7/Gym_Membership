@@ -16,3 +16,19 @@ export const getWorkouts = async (req: Request, res: Response) => { // async wai
         res.status(500).json({error:'Server error'});
     }
 };
+
+// function to add a new workout
+export const createWorkout = async(req: Request, res: Response) => {
+    try{
+        // gets the workout name from the frontend user
+        const { name } = req.body;
+        // saves the workout to the database
+        const result = await query ('INSERT INTO workouts (name) VALUES ($1), RETURNING *', [name]);
+        // sends the workout back to the frontend
+        res.json(result.rows[0]);
+        // if something goes wrong, send back an error message
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({error: 'Server error'});
+    }
+};

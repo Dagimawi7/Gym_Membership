@@ -1,3 +1,4 @@
+// makes routes 
 import { Router } from 'express'; // little map that tells app where to go
 import { getWorkouts } from '../controllers/workoutController'; // calls the controller to get data from the database
 
