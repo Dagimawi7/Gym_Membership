@@ -23,7 +23,7 @@ export const createWorkout = async(req: Request, res: Response) => {
         // gets the workout name from the frontend user
         const { name } = req.body;
         // saves the workout to the database
-        const result = await query ('INSERT INTO workouts (name) VALUES ($1), RETURNING *', [name]);
+        const result = await query ('INSERT INTO workouts (name) VALUES ($1) RETURNING *', [name]);
         // sends the workout back to the frontend
         res.json(result.rows[0]);
         // if something goes wrong, send back an error message
