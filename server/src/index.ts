@@ -2,6 +2,7 @@ import express from "express"; // helps build the server
 import dotenv from "dotenv"; // let us use secret values like passowrd
 import cors from "cors"; // makes frontend and backend communicate
 import { query } from "./db";
+import workoutRoutes from "./routes/workoutRoutes";
 
 // Loads the secret values(passwords) from .env file
 dotenv.config();
@@ -20,6 +21,9 @@ app.use(express.json());
 app.get('/', (req,res) => {
     res.send('workout Tracker API is running!');
 });
+
+// links the workoutRoutes to the server
+app.use('/api/workouts', workoutRoutes)
 
 // starts the server and shows a message it is running
 app.listen(port, () => {
