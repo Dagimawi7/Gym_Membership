@@ -1,0 +1,4 @@
+# holds files that should never be committed to the repository
+node_modules
+# secrect value that should never be shared(passwords)
+.env 
